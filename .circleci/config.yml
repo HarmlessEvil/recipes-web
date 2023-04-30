@@ -34,7 +34,7 @@ jobs:
           command: echo 'export TAG="0.1.$CIRCLE_BUILD_NUM"' >> "$BASH_ENV"
       - run:
           name: Build image
-          command: docker build -t achori/recipes-web:$TAG
+          command: docker build -t achori/recipes-web:$TAG .
       - run:
           name: Push image
           command: |
