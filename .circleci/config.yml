@@ -55,22 +55,4 @@ workflow:
   ci_cd:
     jobs:
       - test
-      - build:
-          requires:
-            - test
-      - pause_workflow:
-          requires:
-            - test
-            - build
-          type: approval
-          filters:
-            branches:
-              only:
-                - master
-      - release:
-          requires:
-            - pause_workflow
-          filters:
-            branches:
-              only:
-                - master
+      - build
