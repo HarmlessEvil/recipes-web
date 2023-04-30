@@ -55,4 +55,6 @@ workflow:
   ci_cd:
     jobs:
       - test
-      - build
+      - build:
+          requires:
+            - test
